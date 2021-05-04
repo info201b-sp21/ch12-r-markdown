@@ -1,0 +1,91 @@
+---
+title: "RGL and Rmarkdown"
+subtitle: "Interactive 3D plotting"
+author: Ott Toomet
+date: "`r format(Sys.time(), '%Y-%m-%d')`"
+output: 
+  html_document:
+    highlight: tango
+    df_print: kable
+    fig_caption: false
+toc: true
+urlcolor: blue
+---
+# Introduction
+
+
+## Random normals
+
+> Create 1000 random normal numbers.  Create it in a code block and show
+> the code.  Display a full sentence where you tell what is the mean of
+> these numbers.
+
+```{r}
+x <- rnorm(1000)
+```
+The mean of these numbers is `r mean(x)`.
+
+## Histogram
+
+> Create a histogram of the normals above.  Use good descriptive
+> labels.  Do _not_ show your code!
+
+```{r, echo=FALSE}
+hist(x,
+     xlab="random value", ylab="count", main=paste(length(x), "random normals"))
+```
+
+
+## Random uniform numbers
+
+> Create a large number of random uniform numbers.  Create a histogram
+> of the result.  You may want to play with `breaks` option of the
+> `hist` function.  Make your figure large: explore `fig.width` and
+> `fig.height` chunk options.
+
+```{r fig.width=15, fig.heigth=12}
+y <- runif(10000)
+hist(y, breaks=100,
+     xlab="random value", ylab="count", main=paste(length(y), "random uniforms"))
+```
+
+
+## Scatterplot
+
+> Create a scatterplot of a large number of random normals, i.e. pick
+> random normal $x$, random normal $y$, and plot x versus y.
+
+```{r}
+n <- 1e4
+x <- rnorm(n)
+y <- rnorm(n)
+plot(x, y, main="random normals")
+```
+
+
+## Fix the YAML header
+
+> Fix the YAML header of this file.  Give it a descriptive title,
+> correct author name, and change some of the formating options.
+
+
+## Throw a die
+
+> Throw a die 10 times.  Report inline how many 6-s you got.
+> 
+> Note: you may want to use `sample` function to simulate die rolls.
+
+```{r}
+r <- sample(6, 10, replace=TRUE)
+```
+
+I got `r sum(r == 6)` sixes.
+
+
+
+## Fueleconomy by number of cylinders
+
+Take the fueleconomy::vehicles data.  Compute the mean fuel economy by
+grouping the vehicles by number of cylinders.  Plot this as a
+barplot.  Ensure you label your bars!
+

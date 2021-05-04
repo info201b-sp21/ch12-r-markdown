@@ -18,7 +18,8 @@ urlcolor: blue
 
 Create 1000 random normal numbers.  Create it in a code block and show
 the code.  Display a full sentence where you tell what is the mean of
-these numbers.
+these numbers.  You can use code `rnorm(10)` to create 10 random
+normals. 
 
 ## Histogram
 
@@ -51,12 +52,4 @@ correct author name, and change some of the formating options.
 Throw a die 10 times.  Report inline how many 6-s you got.
 
 Note: you may want to use `sample` function to simulate die rolls.
-
-
-
-## Fueleconomy by number of cylinders
-
-Take the fueleconomy::vehicles data.  Compute the mean fuel economy by
-grouping the vehicles by number of cylinders.  Plot this as a
-barplot.  Ensure you label your bars!
 
